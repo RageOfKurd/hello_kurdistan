@@ -22,19 +22,19 @@ class MyApp extends StatelessWidget {
               child: Column(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(30, 40, 10, 10),
+                    padding: const EdgeInsets.fromLTRB(10, 40, 10, 10),
                     child: ClipRRect(
-                      borderRadius: BorderRadius.circular(25),
-                      child: Image.network(
-                          "https://preview.redd.it/9zgkmvxau9h81.jpg?auto=webp&s=c49655b5b779a4dff0815065c475561c62ff7980",
-                          width: 250),
-                    ),
+                        borderRadius: BorderRadius.circular(25),
+                        child: Image.asset(
+                          'assets/kurdanime.jpg',
+                          width: 350,
+                        )),
                   ), //
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(32, 10, 10, 10),
+                    padding: const EdgeInsets.fromLTRB(25, 10, 10, 10),
                     child: const Text("Hello Kurdistan",
                         style: TextStyle(
-                            fontSize: 25, fontWeight: FontWeight.bold)),
+                            fontSize: 30, fontWeight: FontWeight.bold)),
                   ),
                 ],
               ),

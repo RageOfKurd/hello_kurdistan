@@ -1,7 +1,8 @@
 # hello_kurdistan
-this is a simple app that displays a text in the center
+this is a simple app that displays one of the images that been clicked in a below row.
 
 snapshot of the app:
 
 
-![home](https://user-images.githubusercontent.com/88142613/174329825-2c7be4e6-e688-4097-9774-8de35f72976a.png)
+
+![Image Selector](https://user-images.githubusercontent.com/88142613/175702058-7736f82a-bacb-4254-84a2-713fc076c09a.png)

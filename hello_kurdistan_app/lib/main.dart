@@ -136,7 +136,7 @@ class _GameSliderState extends State<GameSlider> {
                             tag: 'image',
                             child: Image.asset('assets/three.jpg'))),
                     Positioned(
-                      bottom: 25,
+                      bottom: 60,
                       left: 95,
                       child: Container(
                         child: Center(

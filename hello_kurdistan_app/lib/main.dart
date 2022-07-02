@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:hello_kurdistan_app/game.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,96 +14,151 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'useless app',
+        title: 'something',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
         home: Scaffold(
-            appBar: AppBar(title: Center(child: Text("Kurdistan"))),
-            body: ImageSlider()));
+            appBar: AppBar(title: Center(child: Text("something"))),
+            body: SafeArea(child: GameSlider())));
   }
 }
 
-class ImageSlider extends StatefulWidget {
-  const ImageSlider({Key? key}) : super(key: key);
+class GameSlider extends StatefulWidget {
+  const GameSlider({Key? key}) : super(key: key);
 
   @override
-  State<ImageSlider> createState() => _ImageSliderState();
+  State<GameSlider> createState() => _GameSliderState();
 }
 
-class _ImageSliderState extends State<ImageSlider> {
-  String imageURL = "assets/kurdanime.jpg";
-  Color color = Colors.amber;
+class _GameSliderState extends State<GameSlider> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: (Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Padding(
-              padding: const EdgeInsets.fromLTRB(0, 50, 0, 0),
-              child: CardImage(imageURL, 250, color)),
-          SizedBox(
-            height: 50,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+      child: Center(
+        child: Container(
+          width: double.infinity,
+          height: double.infinity,
+          child: (ListView(
+            scrollDirection: Axis.vertical,
             children: [
+              SizedBox(height: 60),
               InkWell(
-                  onTap: () {
-                    setState(() {
-                      imageURL = "assets/two.png";
-                      color = Colors.deepPurple;
-                    });
-                  },
-                  child: CardImage('assets/two.png', 100, Colors.deepPurple)),
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return Game('God Of War', 55, 'assets/one.jpg');
+                  }));
+                },
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(60, 0, 60, 0),
+                  child: Stack(children: [
+                    Container(
+                      height: 400,
+                    ),
+                    ClipRRect(
+                        borderRadius: BorderRadius.circular(15),
+                        child: Hero(
+                            tag: 'image',
+                            child: Image.asset('assets/one.jpg'))),
+                    Positioned(
+                      bottom: 25,
+                      left: 95,
+                      child: Container(
+                        child: Center(
+                            child: Text(
+                          '55\$',
+                          style: TextStyle(fontSize: 12, color: Colors.white),
+                        )),
+                        height: 50,
+                        width: 50,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(50),
+                            color: Color.fromARGB(255, 32, 145, 45)),
+                      ),
+                    ),
+                  ]),
+                ),
+              ),
+              SizedBox(height: 60),
               InkWell(
-                  onTap: () {
-                    setState(() {
-                      imageURL = "assets/one.png";
-                      color = Colors.amber;
-                    });
-                  },
-                  child: CardImage('assets/one.png', 100, Colors.amber)),
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return Game('Assassin', 70, 'assets/two.jpg');
+                  }));
+                },
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(60, 0, 60, 0),
+                  child: Stack(children: [
+                    Container(
+                      height: 400,
+                    ),
+                    ClipRRect(
+                        borderRadius: BorderRadius.circular(15),
+                        child: Hero(
+                            tag: 'image',
+                            child: Image.asset('assets/two.jpg'))),
+                    Positioned(
+                      bottom: 25,
+                      left: 95,
+                      child: Container(
+                        child: Center(
+                            child: Text(
+                          '70\$',
+                          style: TextStyle(fontSize: 12, color: Colors.white),
+                        )),
+                        height: 50,
+                        width: 50,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(50),
+                            color: Color.fromARGB(255, 32, 145, 45)),
+                      ),
+                    ),
+                  ]),
+                ),
+              ),
+              SizedBox(height: 60),
               InkWell(
-                  onTap: () {
-                    setState(() {
-                      imageURL = "assets/three.png";
-                      color = Colors.indigo;
-                    });
-                  },
-                  child: CardImage('assets/three.png', 100, Colors.indigo))
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return Game('Battlefield', 55, 'assets/three.jpg');
+                  }));
+                },
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(60, 0, 60, 0),
+                  child: Stack(children: [
+                    Container(
+                      height: 400,
+                    ),
+                    ClipRRect(
+                        borderRadius: BorderRadius.circular(15),
+                        child: Hero(
+                            tag: 'image',
+                            child: Image.asset('assets/three.jpg'))),
+                    Positioned(
+                      bottom: 25,
+                      left: 95,
+                      child: Container(
+                        child: Center(
+                            child: Text(
+                          '55\$',
+                          style: TextStyle(fontSize: 12, color: Colors.white),
+                        )),
+                        height: 50,
+                        width: 50,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(50),
+                            color: Color.fromARGB(255, 32, 145, 45)),
+                      ),
+                    ),
+                  ]),
+                ),
+              ),
+              SizedBox(height: 60),
             ],
-          ) //
-        ],
-      )),
+          )),
+        ),
+      ),
     );
-  }
-}
-
-class CardImage extends StatefulWidget {
-  const CardImage(this.url, this.width, this.cardColor);
-
-  final String url;
-  final double width;
-  final Color cardColor;
-
-  @override
-  State<CardImage> createState() => _CardImageState();
-}
-
-class _CardImageState extends State<CardImage> {
-  @override
-  Widget build(BuildContext context) {
-    return (ClipRRect(
-        borderRadius: BorderRadius.circular(25),
-        child: Card(
-          color: widget.cardColor,
-          child: Image.asset(
-            widget.url,
-            fit: BoxFit.cover,
-            width: widget.width,
-          ),
-        )));
   }
 }
